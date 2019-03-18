@@ -1,0 +1,39 @@
+import pandas as pd
+import numpy as np 
+import matplotlib.pyplot as plt
+%matplotlib inline 
+import seaborn as sns
+%config InlineBackend.figure_format = 'retina'
+#import advertools as adv
+
+#df = pd.read_excel('edmundstest.xlsx')
+#df
+
+
+import re
+
+sample_rows = [
+    ("hyundai sonata rebate", "https://www.edmunds.com/hyundai/sonata/2018/deals"),
+    ("2017 jeep wrangler", "https://www.edmunds.com/jeep/wrangler/2017/deals"),
+    ("2019 honda accord", "https://www.edmunds.com/honda/accord/2019/deals"),
+    ("1985 some old car", "https://www.edmunds.com/some/oldcar/1985/deals")
+]
+
+for row in sample_rows:
+    keywords = row[0]
+    url = row[1]
+    # the url
+    if "/2019/" in url:
+        new_url = url
+        print(f"new_url {new_url}")
+    elif re.search("/(?:(?:20)|(?:19))\d{2}/", url):
+        old_url = url
+        print(f"old_url {old_url}")
+        
+    # the "words"
+    if "2019" in keywords:
+        new_word = keywords
+        print(f"new_word {new_word}")
+    elif re.search("(?:(?:20)|(?:19))\d{2}", keywords) is None:
+        new_word = keywords
+        print(f"new_word {new_word}")
