@@ -8,6 +8,7 @@ import seaborn as sns
 
 #df = pd.read_excel('edmundstest.xlsx')
 #df
+#for Landing_Page in zip(df.Landing_Page):
 
 
 import re
@@ -18,6 +19,7 @@ sample_rows = [
     ("2019 honda accord", "https://www.edmunds.com/honda/accord/2019/deals"),
     ("1985 some old car", "https://www.edmunds.com/some/oldcar/1985/deals")
 ]
+
 
 for row in sample_rows:
     keywords = row[0]
