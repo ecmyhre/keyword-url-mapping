@@ -60,3 +60,45 @@ for Keyword, Landing_Page in zip(df["Keyword"], df["Landing_Page"]):
     elif re.search("/(?:(?:20)|(?:19))\d{2}/", Keyword) is None:
         old_word = Keyword
         print(f"old_word {old_word}")
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+import re
+
+df = pd.read_excel('edmundstest.xlsx')
+
+dict, dict2 = {}, {}
+
+for Keyword, Landing_Page in zip(df["Keyword"], df["Landing_Page"]):
+
+# the url
+    if "/2019/" in Landing_Page:
+        new_model_core_incentives = Landing_Page
+        print(f"new_model_core_incentives {new_model_core_incentives}")
+    elif re.search("/(?:(?:20)|(?:19))\d{2}/", Landing_Page):
+        used_model_core_incentives = Landing_Page 
+        dict[Keyword]=f"new_model_core_incentives {new_model_core_incentives}"    
+
+# the "keywords"
+    if "2019" in Keyword:
+        new_word = Keyword
+        print(f"new_word {new_word}")
+    elif re.search("/(?:(?:20)|(?:19))\d{2}/", Keyword) is None:
+        old_word = Keyword
+        dict2[Keyword]=f"old_word {old_word}"        
+        
+        
